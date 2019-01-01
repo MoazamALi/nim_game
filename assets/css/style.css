@@ -1,0 +1,189 @@
+
+/* latin */
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Permanent Marker Regular'), local('PermanentMarker-Regular'), url(fonts/Fh4uPib9Iyv2ucM6pGQMWimMp004La2Cfw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(fonts/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(fonts/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("img/back1.jpg");
+    background-size: cover;
+    font-family: "Raleway";
+}
+
+nav{
+    background-color: #cccccc26 !important;
+}
+/* Materialize style to make sticky footer */
+main {
+    flex: 1 0 auto;
+}
+
+#modal {
+    max-height: 90%;
+}
+
+h4,
+.game-title {
+    font-family: "Permanent Marker";
+}
+
+
+
+a {
+    margin: 0 5px;
+}
+
+.page-footer {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Game board is flex to align game pieces better than Materialize grid */
+.gameboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    min-height: 50vh;
+    /*margin-top: 10%;*/
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Positioning for each heap within the gameboard */
+.heap-one,
+.heap-two,
+.heap-three {
+    display: flex;
+    /*justify-content: center;*/
+    align-content: center;
+}
+
+/* Styles for each game piece in each heap */
+.item:hover{
+    opacity: 0.6;
+}
+.item {
+    display: inline-block;
+    cursor: pointer;
+    /*margin: .5em;*/
+    width: 75px;
+    height: 75px;
+    background-repeat-x: no-repeat;
+    background-size: contain;
+    background-image: url(../images/normal_matchstick.png);
+}
+
+.button-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.switch-player,
+.game-mode {
+    border-radius: 10px;
+    background-color: #26a69a;
+}
+
+.reminder-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.reminder-msg {
+    padding: 0.25em;
+    border-radius: 0.5em;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.logo {
+    width: 25px;
+    height: 25px;
+    filter: invert(100%);
+}
+
+.win-msg {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 20px;
+    color: #222;
+    padding: 10px;
+}
+
+.instructions {
+    margin: 5%;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+}
+
+/* Media query for mobile to adjust the game pieces and text*/
+@media (max-width: 800px) {
+    .item {
+        margin: .1em;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .win-msg {
+        font-size: 24px;
+    }
+
+    .reminder-msg {
+        font-size: 14px;
+    }
+
+    .switch-player {
+        font-size: 14px;
+    }
+}

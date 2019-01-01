@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nim Game</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/materialize.min.js"></script>
+</head>
+<body>
+<!-- Materialize Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h4>Select Game Mode:</h4>
+        <button class="btn game-mode computer">vs. Computer</button>
+        <button class="btn game-mode two-player">Two Player</button><br><br>
+    </div>
+    <div class="modal-footer">
+        <a href="#" style="background:#ccc;" class="modal-close waves-effect btn-flat">Play!</a>
+    </div>
+</div>
+
+<!-- Materialize nav bar with links -->
+<nav>
+    <div class="nav-wrapper">
+        <ul class="right hide-on-med-and-down">
+            <li><a class="reset"><img  style="width: 35px;margin-top: 18px;" src="assets/images/reset.png"></a></li>
+            <li><a href="index.html"><img style="width: 35px;margin-top: 15px;" src="assets/images/game_mode.png"></a></li>
+        </ul>
+    </div>
+</nav>
+<!-- Container for fadeIn/Out reminder to switch players -->
+<div class="reminder-container">
+    <h5 class="reminder-msg">Click your player button to finish your turn.</h5>
+</div>
+<!-- Control Panel for game play -->
+<div class="button-panel container">
+    <h5 class="waves-effect waves-light btn-small switch-player flow-text" id="player-one"><i class='material-icons'>person</i>Player 1</h5>
+    <h5 class="waves-effect waves-light btn-small disabled switch-player flow-text" id="player-two"><i class='material-icons'>person</i>Player 2</h5>
+</div>
+<!-- Divs to contain each heap item -->
+<main class="container">
+    <div class="gameboard">
+        <div class="heaps heap-one" id="heap-one">
+            <div style="margin-right:10px; border: 1px solid red;" class="item" is_selected="0" id="h1-1"></div>
+            <div style=" border-left: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;"  class="item" is_selected="0" id="h1-2"></div>
+            <div style=" border-right: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;"  class="item" is_selected="0" id="h1-3"></div>
+        </div>
+        <div class="heap-binary-container">
+                Binary of heap one = <span style="font-size: 25px;font-weight: bold;" id="heap-one-binary"></span>
+        </div>
+        <div class="heaps heap-two" id="heap-two">
+            <div style="margin-right:10px; border: 1px solid red;" class="item" is_selected="0" id="h2-1"></div>
+            <div style=" border-left: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h2-2"></div>
+            <div style="border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h2-3"></div>
+            <div style="border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h2-4"></div>
+            <div style="border-right: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h2-5"></div>
+        </div>
+        <div class="heap-binary-container">
+            Binary of heap two = <span style="font-size: 25px;font-weight: bold;" id="heap-two-binary"></span>
+        </div>
+        <div class="heaps heap-three" id="heap-three">
+            <div style="margin-right:10px;border: 1px solid red;" class="item" is_selected="0" id="h3-1"></div>
+            <div style="border-left: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h3-2"></div>
+            <div style="margin-right:10px;border-right: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h3-3"></div>
+            <div style="border-left: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h3-4"></div>
+            <div style="border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" class="item" is_selected="0" id="h3-5"></div>
+            <div style="border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h3-6"></div>
+            <div style="border-right: 1px solid red;border-top: 1px solid red;border-bottom: 1px solid red;" class="item" is_selected="0" id="h3-7"></div>
+        </div>
+        <div class="heap-binary-container">
+            Binary of heap three = <span style="font-size: 25px;font-weight: bold;" id="heap-three-binary"></span>
+        </div>
+        <div class="heap-binary-container">
+           Nim Sum = <span style="font-size: 25px;font-weight: bold;" id="nim_sum"></span>
+        </div>
+    </div>
+</main>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
